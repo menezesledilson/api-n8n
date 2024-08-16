@@ -20,6 +20,6 @@ Este projeto é uma API simples para gerenciar tarefas com dois endpoints: um pa
 ## Executando o N8N Localmente
 
 Para rodar o N8N localmente, utilize o comando:
-http://localhost:5678/signin
+- http://localhost:5678/signin
 ```bash
 n8n start
