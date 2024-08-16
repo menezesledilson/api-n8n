@@ -1,0 +1,64 @@
+{
+  "name": "My Api",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/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",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"text\": \"Alerta: Uma nova tarefa foi criada.\"\n}\n\n",
+        "options": {}
+      },
+      "id": "c12b1025-81e4-459a-a2de-2eb9079a9ce0",
+      "name": "HTTP Request Alerta Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        400,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/webhook/task-alert",
+        "options": {}
+      },
+      "id": "c97b8acd-07da-4822-b80a-2cf43bb2472d",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        80,
+        280
+      ],
+      "webhookId": "e6b0b7e2-c5e6-43a1-b274-66437fb779a0"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request Alerta Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d944afbd-68ec-4169-af1a-4b5da9b92804",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "259941609b07a81f47ef3bb06f8c408a1e876cd87c2315324bb26efe7afa21fd"
+  },
+  "id": "zYVOI2u544esM5rb",
+  "tags": []
+}
